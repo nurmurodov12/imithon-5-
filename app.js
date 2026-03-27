@@ -5,9 +5,6 @@ const btnAdd = document.getElementById("button-add")
 let arr = []
 const inputForm = document.getElementById("input-form")
 
-
-
-
 fecthApi()
 async function fecthApi() {
     const response = await fetch(API)
@@ -16,8 +13,6 @@ async function fecthApi() {
     createTodos(dataJson)
     arr = dataJson
 }
-
-
 
 async function createTodos(array = []) {
     todosContainer.innerHTML = ``
@@ -28,7 +23,7 @@ async function createTodos(array = []) {
                             <input type="checkbox" ${val.complete ? "checked" : ""} >
                             <h2 >${val.title}</h2>
                         </div>
-
+                            
                         <div id="todo-btn" class="flex pb-2 gap-3 h-[60px] ">
                             <button class="bg-sky-600 w-[100px] rounded h-[40px] text-white cursor-pointer" onclick="editItem(${val.id})">
                                 Edit
@@ -46,9 +41,9 @@ async function createTodos(array = []) {
 
 async function editItem(id) {
     const newTitle = prompt("yangi titleni kiriting")
-    const newComplete = Boolean(prompt("yangi complete kiriting"))
-    const trueAndFalse = newComplete.toLowerCase === "true"
-
+    const newComplete = prompt("yangi complete kiriting")
+    const trueAndFalse = newComplete.toLowerCase() === "true"
+    
     const editProduct = {
         title: newTitle,
         complete: trueAndFalse
@@ -86,7 +81,6 @@ btnAdd.addEventListener("click", async (e) => {
     let newProduct = {
         title: title,
         complete: completeTrue
-        
     }
 
     await fetch(API, {
@@ -96,6 +90,7 @@ btnAdd.addEventListener("click", async (e) => {
         },
         body: JSON.stringify(newProduct)
     })
+
     const createTodo = await fetch(API)
     const createTodoJson = await createTodo.json(createTodo)
 
@@ -104,15 +99,9 @@ btnAdd.addEventListener("click", async (e) => {
     form.reset()
 })
 
-
 const allTasks = document.getElementById("alltasks")
 const complete = document.getElementById("complete")
 const pending = document.getElementById("pending")
-
-
-
-
-
 
 allTasks.addEventListener("click", () => {
     createTodos(arr)
@@ -133,4 +122,3 @@ pending.addEventListener("click", () => {
 
     createTodos(pending)
 })
-
