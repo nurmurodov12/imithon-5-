@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container w-[1100px] mx-auto">
+        <div class="w-[100%] bg-sky-600 h-[110px] flex justify-center " id="header">
+            <div id="todo-info " class="flex items-center gap-5 w-[50%] justify-end">
+                <input type="checkbox" class="bg-amber-600 ">
+                <h1 class="text-3xl font-semibold text-white">To-Do List</h1>
+            </div>
+
+            <div id="todo-btns" class="pl-[50px] w-[50%] h-[100%] flex items-center">
+                <div class=" w-[400px] border-sky-950 ml-10 flex justify-evenly">
+                    <button class="w-[30%] bg-sky-700 rounded h-10 text-white cursor-pointer" id="alltasks">All Tasks</button>
+                    <button class="w-[30%] bg-sky-700 rounded h-10 text-white cursor-pointer" id="complete">Completed</button>
+                    <button class="w-[30%] bg-sky-700 rounded h-10 text-white cursor-pointer" id="pending">Pending</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="main-todos" class="pt-9 bg-black h-auto pb-9">
+            <div id="todos-create" class="flex justify-center gap-10 bp-pink-500 pb-10">
+                <form class="flex  gap-4" id="form-new">
+                    <input type="text" class="w-[700px] bg-white p-3 rounded" id="input-form" placeholder="Enter new task">
+                    <button class="w-[150px] bg-green-700 h-[50px] text-white rounded cursor-pointer" id="button-add">
+                        Add task
+                    </button>
+                </form>
+            </div>
+            <div class="w-[910px] h-[1px] bg-black ml-23" id="div-blur"></div>
+            <div id="todos-container" class="w-[880px] bg-white h-auto py-3 ml-28">
+                <ul class="w-[100%] h-auto" id="todos-ul">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
